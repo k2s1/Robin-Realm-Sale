@@ -1,17 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>REALM — Token Sale on Robinhood Chain</title>
     <meta name="description" content="REALM token sale on Robinhood Chain. NFT-gated tier for Robin Realms holders, public tier for everyone." />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2300d09c'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='52' font-family='sans-serif' fill='%23000' font-weight='900'%3ER%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="/nft/4a473887.svg" />
     <!-- ethers v6 from CDN (UMD) — exposes window.ethers, no Vite bundling needed -->
     <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
-    <script type="module" crossorigin src="/assets/index-IhdrR0zZ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CIX5pCfD.css">
+    <!-- Theme bootstrap: read localStorage before paint to avoid flash -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("realm-theme");
+          var theme = saved === "light" || saved === "dark" ? saved : "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) { /* localStorage may be blocked; default to dark via the attribute on <html> */ }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-0xrocWGN.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CSJa3eIu.css">
   </head>
-  <body class="bg-rhbg text-white antialiased">
+  <body>
     <div id="root"></div>
   </body>
 </html>

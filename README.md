@@ -10,17 +10,25 @@ Static bundle for the REALM token sale frontend on **Robinhood Chain** (chain ID
 
 ## What's in this repo
 
-This is the **production-built static site** (Vite output, ~160KB JS gzip-friendly). Deployed as-is on Vercel — no build step needed.
+This is the **production-built static site** (Vite output, ~170KB JS gzip-friendly). Deployed as-is on Vercel — no build step needed.
 
 ```
 .
-├── index.html              entry, loads ethers v6 from CDN
+├── index.html              entry, loads ethers v6 from CDN + theme bootstrap
 ├── assets/
 │   ├── index-*.js          React bundle
 │   └── index-*.css         Tailwind CSS
 ├── nft/                    10 Robin Realms preview SVGs
 └── vercel.json             caching + security headers
 ```
+
+## Features
+
+- **Dark / light mode** — toggle via the sun/moon icon in the topbar. Choice persisted to `localStorage`; bootstrap script in `index.html` applies it before paint to avoid flash.
+- **OpenSea-style wallet picker** — "Connect Wallet" opens a modal that lists MetaMask, Brave, Coinbase, WalletConnect, Phantom, Trust, and Robinhood Wallet. Detected wallets show an "Installed" badge; undetected ones open the install page on click. The picker handles EIP-5749 multi-provider environments (`window.ethereum.providers`) so the right injected wallet is selected.
+- **Auto chain switch** — connects to Robinhood Chain 4663 and prompts the wallet to switch (or add) the chain if needed.
+- **NFT tier / public tier** — per-wallet cap from the on-chain snapshot, public tier defaults to 0.0005 ETH/wallet.
+- **Live sale stats** — auto-refreshing totals, allocation, and remaining per wallet.
 
 ## How it's built
 
