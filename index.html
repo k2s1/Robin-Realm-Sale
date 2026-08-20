@@ -6,6 +6,9 @@
     <title>REALM — Token Sale on Robinhood Chain</title>
     <meta name="description" content="REALM token sale on Robinhood Chain. NFT-gated tier for Robin Realms holders, public tier for everyone." />
     <link rel="icon" type="image/svg+xml" href="/nft/4a473887.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <!-- ethers v6 from CDN (UMD) — exposes window.ethers, no Vite bundling needed -->
     <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
     <!-- Theme bootstrap: read localStorage before paint to avoid flash -->
@@ -15,11 +18,11 @@
           var saved = localStorage.getItem("realm-theme");
           var theme = saved === "light" || saved === "dark" ? saved : "dark";
           document.documentElement.setAttribute("data-theme", theme);
-        } catch (e) { /* localStorage may be blocked; default to dark via the attribute on <html> */ }
+        } catch (e) { /* default to dark via the attribute on <html> */ }
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-0xrocWGN.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CSJa3eIu.css">
+    <script type="module" crossorigin src="/assets/index-BTMKvuVP.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BA49aDNS.css">
   </head>
   <body>
     <div id="root"></div>
